@@ -1,0 +1,10 @@
+# 리스트에서 문자열을 가져옵니다.
+string_value = '50+40'
+
+# '+' 기호로 나누어 각각의 숫자를 리스트로 만듭니다.
+numbers = string_value.split('+')  # ['50', '40']
+
+# 문자열을 정수로 변환하고 합계를 계산합니다.
+result = sum(map(int, numbers))  # 50 + 40 = 90
+
+print(result)  # 출력: 90
