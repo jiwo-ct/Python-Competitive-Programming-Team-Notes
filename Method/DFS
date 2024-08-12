@@ -1,0 +1,25 @@
+def dfs(graph, node, visited): 
+  visited[node] = True 
+  print(node, end=' ')
+  for i in graph[node]:
+    if not visited[i]: # 방문하지 않았다면 visited를 True 
+      dfs(graph, i, visited)
+    # 아니면 무시 
+
+# 각 인덱스는 노드를 나타내고, 해당 인덱스의 값(리스트)은 그 노드와 연결된 노드들을 나타냅니다
+#  graph[1]은 [2, 3, 8]로, 노드 1은 노드 2, 3, 8과 연결되어 있습니다.
+graph = [
+  [],
+  [2,3,8],
+  [1,7], 
+  [1,4,5],
+  [3,5],
+  [3,4],
+  [7],
+  [2,6,8],
+  [1,7]
+]
+
+visited = [False] * 9
+
+dfs(graph,1,visited)
